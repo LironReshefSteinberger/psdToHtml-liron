@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+}
+
+/* font-family: 'Open Sans', sans-serif; - lato*/
+
+/* Font Face */
+
+@font-face {
+    font-family: Lato-regular;
+    src: url('../fonts/Lato/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: Lato-bold;
+    src: url('../fonts/Lato/OpenSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: Euro;
+    src: url('../fonts/Euro/eurof55.ttf');
+}
+
+html {
+    font-family: 'Lato-regular', 'Open Sans', sans-serif;
+    color: #606060;
+}
+
+body {
+    margin: 0;
+}
+
+h1, h2, h3, p, li {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a, .btn {
+    cursor: pointer;
+}
+
+.btn {
+    background-color: #ffffff;
+}
+
+/* Helpers */
+
+.text-align {
+    text-align: center;
+}
+
+.container {
+    padding: 0 20px;
+}
+
+.container, .btns-previous-next {
+    /* flex is not like block, (not 100% width) so we need to write:  width: 100%; when we set max-width */
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+/* lists */
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* flex */
+.flex {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.direction {
+    flex-direction: column;
+}
+
+/* .align-item {
+    align-self: center;
+} */
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.column {
+    flex-direction: column;
+}
+
+header {
+    height: 130px;
+    background-color: #292929;
+    box-shadow: inset 0px -5px #1e1e1e;
+    /* we coont do it?? only marig-bottom for all items*/
+    /* margin-bottom: 80px; */
+}
+
+h1.logo {
+    margin: 0;
+}
+
+.logo {
+    color: #ffffff;
+    text-transform: capitalize;
+    font-family: 'Euro', 'Open Sans', sans-serif;
+}
+
+.logo span {
+    color: #58c93a;
+}
+
+/* nav .clean-list {
+    color: #ffffff;
+} */
+
+/* nav .clean-list li{
+    width: 130px;
+    height: 130px;
+    border-right: 1px solid #1e1e1e;
+} */
+
+nav li a{
+    color: #ffffff;
+    width: 130px;
+    height: 130px;
+    border-right: 1px solid #1e1e1e;
+    justify-content: center;
+    display: block;
+    line-height: 130px;
+    font-family: 'Lato-bold', 'Open Sans', sans-serif;
+}
+
+nav li a:hover, nav li a:active{
+    color: #58c93a;
+}
+
+nav li a:active{
+    /* border-bottom: 5px solid #58c93a; */
+    box-shadow: inset 0px -5px #58c93a; 
+}
+
+main.container {
+    border-right: 1px solid #e1e0e0;
+    border-left: 1px solid #e1e0e0;
+    padding-top: 80px;
+}
+
+.blog-items-container {
+    width: 940px;
+}
+
+/*is it ok together and not speical class???*/
+.blog-info, .blog-item-img {
+    height: 300px;
+    /* width: 450px; */
+}
+
+.blog-info {
+    width: 460px;
+}
+
+.blog-item {
+    padding-bottom: 80px;
+}
+
+.blog-info h2 {
+    font-family: 'Lato-bold', 'Open Sans', sans-serif;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    line-height: 27px;
+}
+
+.btn-continue {
+    border-radius: 20px;
+    border: 2px solid #c2c2c2;
+    color: #c2c2c2;
+    height: 40px;
+    width: 185px;
+    font-family:  'Lato-regular', 'Open Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.btn-continue:hover {
+    color: #58c93a;
+    border: 2px solid #58c93a;
+    width: 210px;
+}
+
+.btn-continue:hover::after {
+
+}
+
+.btns-previous-next {
+    border: 1px solid #e1e0e0;
+}
+
+.btn-previous, .btn-next {
+    border: none;
+    font-family: 'Lato-regular', 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    color: #818181;
+    margin: 35px 0;
+    padding: 0 60px;
+}
+
+footer {
+    background-color: #f8f8f8;
+    height: 315px;
+    justify-content: center;
+}
+
+footer .logo {
+    color: #292929
+}
+
+footer p span {
+    font-family: 'Lato-bold', 'Open Sans', sans-serif;
+}
+
+.footer-items-container {
+    max-width: 520px;
+    height: 170px;
+}
+
+
+.footer-items-container p {
+    font-size: 0.8125rem;
+}
+
+.icons li a{
+    width: 40px;
+    line-height: 40px;
+    background-color: #e5e5e5;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.icons li:last-child {
+    margin-right: 0px;
+}
+
+.icons a {
+    color: #ffffff;
+}
+
+.icons a:hover {
+    background-color: #516fad;
+}
+
+
+
