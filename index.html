@@ -7,14 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PSD to html</title>
     <!-- Custom fonts for this template -->
+    <link href="vendor/right-arrow.svg" rel="stylesheet" type="text/css">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- <link href="vendor/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css"> -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
 </head>
 
 <body>
+        <div class="screen" onclick="toggleMenu()"></div>
     <header class="flex space-between align-center text-align">
         <div class="container flex space-between align-center">
             <h1 class="logo">blogin<span>.</span></h1>
+            <button class="btn btn-toggle-menu" onclick="toggleMenu()">☰</button>
             <nav>
                 <ul class="clean-list flex space-between align-center">
                     <li><a href="#">Journal</a></li>
@@ -29,6 +33,7 @@
         <ul class="clean-list blog-items-container">
             <li class="blog-item flex space-between">
                 <img class="blog-item-img" src="img/img_site_1.jpg" alt="Mountain and tree view">
+                <img class="blog-item-img-protrait" src="img/img_site_1_protrait.jpg" alt="Mountain and tree view">
                 <div class="blog-info flex column space-between">
                     <h2>duis aute irure dolor in henderit in voluptate.</h2>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
@@ -39,6 +44,7 @@
             </li>
             <li class="blog-item flex space-between">
                 <img class="blog-item-img" src="img/img_site_2.jpg" alt="Pointview on beach">
+                <img class="blog-item-img-protrait" src="img/img_site_2_protrait.jpg" alt="Mountain and tree view">
                 <div class="blog-info flex column space-between">
                     <h2>duis aute irure dolor in henderit in voluptate.</h2>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
@@ -49,6 +55,7 @@
             </li>
             <li class="blog-item flex space-between">
                 <img class="blog-item-img" src="img/img_site_3.jpg" alt="Wheat fiels">
+                <img class="blog-item-img-protrait" src="img/img_site_3_protrait.jpg" alt="Mountain and tree view">
                 <div class="blog-info flex column space-between">
                     <h2>duis aute irure dolor in henderit in voluptate.</h2>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
@@ -76,5 +83,24 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            // $('nav ul').toggle('.open');
+            var elMenu = document.querySelector('nav ul');
+            elMenu.classList.toggle('.open');
+            var elBtnToggleMenu= document.querySelector('.btn-toggle-menu');
+            // var txt = $(elBtnToggleMenu.innerText).is('X') ? '☰' : 'X';
+            // $(elBtnToggleMenu).text(txt);
+            var txt = (elBtnToggleMenu.innerText === 'X') ? '☰' : 'X';
+            // var txt = $(elBtnToggleMenu.innerText).is('X') ? '☰' : 'X';
+            elBtnToggleMenu.innerText = txt;
+
+
+            // elBtnToggleMenu.innerText = 'X';
+            // var elMenuLink = document.querySelector('nav li a');
+            // elMenu.classList.toggle('.nav-li-a-open ');
+        }
+    </script>
 </body>
 </html>

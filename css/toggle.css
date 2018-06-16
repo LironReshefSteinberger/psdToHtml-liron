@@ -1,0 +1,67 @@
+nav ul {
+    /* .nav-ul-open { */
+        display: flex;
+        flex-direction: column;
+        /* height: 100vh; */
+        /* z-index: 5; */
+        width: 250px;
+        background-color: #d5d2d296;
+        /* background-color: #00000082; */
+        position: fixed;
+        top: 110px;
+        right: 0%;
+transform: translate(100%, 0);
+transition: all .8s;
+}
+
+/* .open - tp do with toggle */
+.nav-ul-open {
+
+    transform: translate(0, 0);
+}
+
+
+/* .open - tp do with toggle */
+/* nav ul { */
+/* .nav-ul-open { */
+/* display: flex;
+flex-direction: column; */
+/* height: 100vh; */
+/* z-index: 5; */
+/* width: 250px;
+background-color: #d5d2d296; */
+/* background-color: #00000082; */
+/* position: fixed;
+top: 130px;
+right: 0%;
+transform: translate(0, 0);
+} */
+
+nav li a{
+/* .nav-li-a-open { */
+/* when is .open displated*/
+width: 250px;
+border-bottom: 1px solid #1e1e1e;
+color: #1e1e1e;
+/* color: #ffffff; */
+/* when .open is hidden*/
+/* width: 110px; */
+height: 110px;
+/* when .open is hidden*/
+/* border-right: 1px solid #1e1e1e; */
+justify-content: center;
+display: block;
+line-height: 110px;
+font-family: 'Lato-bold', 'Open Sans', sans-serif;
+}
+
+nav li a:hover, nav li a:active{
+    color: #58c93a;
+    
+}
+
+nav li a:active{
+    /* border-bottom: 5px solid #58c93a; */
+    box-shadow: inset 0px -5px #58c93a;
+    border-bottom: 0 solid #1e1e1e; 
+}

@@ -2,8 +2,6 @@
     box-sizing: border-box;
 }
 
-/* font-family: 'Open Sans', sans-serif; - lato*/
-
 /* Font Face */
 
 @font-face {
@@ -38,6 +36,10 @@ a {
     text-decoration: none;
 }
 
+.btn:focus {
+    outline: none;
+}
+
 a, .btn {
     cursor: pointer;
 }
@@ -68,6 +70,10 @@ a, .btn {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.hidden {
+    display: none;
 }
 
 /* flex */
@@ -104,7 +110,7 @@ a, .btn {
 }
 
 header {
-    height: 130px;
+    height: 110px;
     background-color: #292929;
     box-shadow: inset 0px -5px #1e1e1e;
     /* we coont do it?? only marig-bottom for all items*/
@@ -125,24 +131,48 @@ h1.logo {
     color: #58c93a;
 }
 
-/* nav .clean-list {
+.btn-toggle-menu {
+    width: 110px;
+    height: 110px;
     color: #ffffff;
-} */
+    background-color: #292929;
+    border: 0;
+    font-size: 2.5rem;
+    position: fixed;
+    right: 0;
+}
 
-/* nav .clean-list li{
-    width: 130px;
-    height: 130px;
-    border-right: 1px solid #1e1e1e;
-} */
+nav ul {
+    /* height: 100vh; */
+    /* z-index: 5; */
+    /* width: 250px;*/
+    flex-direction: column;
+    background-color: #d5d2d296;
+    /* background-color: #00000082; */
+    position: fixed;
+    top: 110px;
+    right: 0%;
+    transform: translate(50%, 0);
+    transition: all .8s;
+}
+
+.open {
+    transform: translate(0, 0);
+}
+
+.screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
 
 nav li a{
-    color: #ffffff;
-    width: 130px;
-    height: 130px;
-    border-right: 1px solid #1e1e1e;
+    width: 250px;
+    border-bottom: 1px solid #1e1e1e;
+    color: #1e1e1e;
     justify-content: center;
     display: block;
-    line-height: 130px;
+    line-height: 110px;
     font-family: 'Lato-bold', 'Open Sans', sans-serif;
 }
 
@@ -152,31 +182,50 @@ nav li a:hover, nav li a:active{
 
 nav li a:active{
     /* border-bottom: 5px solid #58c93a; */
-    box-shadow: inset 0px -5px #58c93a; 
+    box-shadow: inset 0px -5px #58c93a;
+    border-bottom: 0 solid #1e1e1e; 
 }
 
 main.container {
     border-right: 1px solid #e1e0e0;
     border-left: 1px solid #e1e0e0;
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 .blog-items-container {
-    width: 940px;
+    max-width: 940px;
+    width: 100%;
 }
 
 /*is it ok together and not speical class???*/
-.blog-info, .blog-item-img {
-    height: 300px;
-    /* width: 450px; */
+.blog-info {
+    align-self: center;
+    /* max-height: 300px; */
+    /* max-height: 300px;
+    height: 100%; */
+    height: 230px;
+    max-width: 450px;
+    width: 100%;
+    overflow: hidden;
 }
 
-.blog-info {
-    width: 460px;
+.blog-item-img {
+    max-height: 300px;
+    height: 100%;
+    max-width: 450px;
+    width: 100%;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.blog-item-img-protrait {
+    display: none;
 }
 
 .blog-item {
-    padding-bottom: 80px;
+    padding-bottom: 60px;
+    flex-direction: column;
+    /* height: 550px; */
 }
 
 .blog-info h2 {
@@ -187,11 +236,13 @@ main.container {
 }
 
 .btn-continue {
+    display: none;
     border-radius: 20px;
     border: 2px solid #c2c2c2;
     color: #c2c2c2;
     height: 40px;
     width: 185px;
+    /* width: 300px; */
     font-family:  'Lato-regular', 'Open Sans', sans-serif;
     font-size: 1rem;
 }
@@ -199,11 +250,20 @@ main.container {
 .btn-continue:hover {
     color: #58c93a;
     border: 2px solid #58c93a;
+    /* content: "<i class="fa fa-long-arrow-right"></i>"; */
     width: 210px;
+    /* text-align: left; */
+    /* width: 400px; */
 }
 
 .btn-continue:hover::after {
-
+    /* content: "<i class="fa fa-long-arrow-right"></i>"; */
+    content: "<p>Right arrow: <i class="arrow right"></i></p>";
+    color: #58c93a;
+    /* position: absolute;
+    opacity: 0;
+    top: 14px;
+    right: -20px; */
 }
 
 .btns-previous-next {
@@ -214,15 +274,15 @@ main.container {
     border: none;
     font-family: 'Lato-regular', 'Open Sans', sans-serif;
     text-transform: uppercase;
-    font-size: 1.125rem;
     color: #818181;
-    margin: 35px 0;
-    padding: 0 60px;
+    font-size: 0.8rem;
+    margin: 20px 0;
+    padding: 0 10px;
 }
 
 footer {
     background-color: #f8f8f8;
-    height: 315px;
+    height: 220px;
     justify-content: center;
 }
 
@@ -236,9 +296,8 @@ footer p span {
 
 .footer-items-container {
     max-width: 520px;
-    height: 170px;
+    height: 180px;
 }
-
 
 .footer-items-container p {
     font-size: 0.8125rem;
@@ -264,5 +323,188 @@ footer p span {
     background-color: #516fad;
 }
 
+.btns-previous-next i {
+    margin: 0 10px;
+}
+
+.footer-items-container p {
+    text-align: center;
+    line-height: 1.3rem;
+}
+
+@media screen and (min-width: 678px) {
+    header {
+        height: 110px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        background-color: #d5d2d200;
+        position: static;
+        transition: all 0s;
+        transform: translate(0, 0);
+    }
+
+    nav li a{
+        color: #ffffff;
+        width: 110px;
+        /* height: 110px; */
+    }
+
+    .btn-toggle-menu {
+        display: none;
+    }
+
+    .container, .btns-previous-next {
+        /* flex is not like block, (not 100% width) so we need to write:  width: 100%; when we set max-width */
+        /* width: 100%; */
+        max-width: 678px;
+        margin: 0 auto;
+    }
+
+    main.container {
+        padding-top: 50px;
+    }
+
+    .blog-items-container {
+        width: 655px;
+    }
+
+    .blog-item-img-protrait {
+        display: inline;
+    }
+
+    .blog-item-img {
+        display: none;
+    }
+    
+    .blog-info {
+        width: 650px;
+        margin: 0 0 0 35px;
+    }
+
+    /*is it ok together and not speical class???*/
+    .blog-info, .blog-item-img {
+        height: 300px;
+        width: 450px;
+    }
+
+    .blog-item {
+        padding-bottom: 50px;
+        flex-direction: row;
+    }
+
+    .btn-continue {
+        display: inline;
+    }
+
+    .btn-previous, .btn-next {
+        margin: 25px 0;
+        padding: 0 25px;
+    }
+
+    footer {
+        height: 200px;
+    }
+
+    .footer-items-container {
+        height: 160px;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    header {
+        height: 130px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        background-color: #d5d2d200;
+        position: static;
+        transform: translate(0, 0);
+    }
+
+    nav li a{
+        color: #ffffff;
+        width: 130px;
+        /* height: 130px; */
+        line-height: 130px;
+    }
+    
+    nav li a:hover, nav li a:active{
+        color: #58c93a;
+    }
+    
+    nav li a:active{
+        /* border-bottom: 5px solid #58c93a; */
+        box-shadow: inset 0px -5px #58c93a; 
+    }
+
+    .btn-toggle-menu {
+        display: none;
+    }
+
+    main.container {
+        padding-top: 80px;
+    }
+
+    .container, .btns-previous-next {
+        /* flex is not like block, (not 100% width) so we need to write:  width: 100%; when we set max-width */
+        width: 100%;
+        max-width: 980px;
+        margin: 0 auto;
+    }
+ 
+    .blog-items-container {
+        max-width: 940px;
+        width: 100%;
+    }
+
+    li.blog-item {
+        margin: 0;
+    }
+
+    .blog-item-img-protrait {
+        display: none;
+    }
+
+    .blog-item-img {
+        display: inline;
+        /* max-height: 300px;
+        height: 100%;
+        max-width: 450px;
+        width: 100%; */
+    }
+
+    /*is it ok together and not speical class???*/
+    .blog-info, .blog-item-img {
+        height: 300px;
+        width: 450px;
+    }
+
+    .blog-item {
+        padding-bottom: 80px;
+        flex-direction: row;
+    }
+
+    .blog-info {
+        /* width: 550px; */
+        /* margin: 0 0 0 20px; */
+    }
+
+    .btn-previous, .btn-next {
+        margin: 35px 0;
+        padding: 0 35px;
+    }
+
+    footer {
+        height: 315px;
+    }
+
+    .footer-items-container {
+        max-width: 520px;
+        height: 170px;
+    }
+}
 
 
