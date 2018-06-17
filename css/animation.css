@@ -1,0 +1,33 @@
+/* i can do scale instade of translate - so the dropwdown will be beloow journal and not from the top*/
+.journal-dropdown {
+    position: absolute;
+    /* display: none; */
+    top: 130px;
+    transition: all .8s;
+    /* height: 0%; */
+    height: fit-content;
+    background-color: #292929;
+    transform: translate(0, calc(-130px - 100%));
+    flex-direction: column;
+}
+
+.journal:hover .journal-dropdown {
+    /* display: block; */
+    /* height: 246%; */
+    
+    /* z-index: 5; */
+    /* width: 250px;*/
+    /* top: -155%; */
+    /* right: 100%; */
+    transform: translate(0, 0);
+}
+
+.journal-dropdown li a {
+    width: 260px;
+    height: 80px;
+    line-height: 80px;
+    margin: 0;
+}
+
+
+

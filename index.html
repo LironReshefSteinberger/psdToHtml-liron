@@ -14,14 +14,22 @@
 </head>
 
 <body>
-        <div class="screen" onclick="toggleMenu()"></div>
+    <div class="screen" onclick="toggleMenu()"></div>
     <header class="flex space-between align-center text-align">
         <div class="container flex space-between align-center">
             <h1 class="logo">blogin<span>.</span></h1>
             <button class="btn btn-toggle-menu" onclick="toggleMenu()">☰</button>
             <nav>
-                <ul class="clean-list flex space-between align-center">
-                    <li><a href="#">Journal</a></li>
+                <ul class="clean-list flex align-center">
+                    <li class="journal"><a href="#">Journal</a>
+                        <ul class="clean-list journal-dropdown flex align-center column hidden">
+                            <li><a href="#">October 2016</a>
+                            <li><a href="#">January 2017</a>
+                            <li><a href="#">April 2017</a>
+                            <li><a href="#">July 2017</a>
+                        </ul>
+                    </li>
+
                     <li><a href="#">About</a></li>
                     <li><a href="#">Work</a></li>
                     <li><a href="#">Contact</a></li>
@@ -35,36 +43,53 @@
                 <img class="blog-item-img" src="img/img_site_1.jpg" alt="Mountain and tree view">
                 <img class="blog-item-img-protrait" src="img/img_site_1_protrait.jpg" alt="Mountain and tree view">
                 <div class="blog-info flex column space-between">
-                    <h2>duis aute irure dolor in henderit in voluptate.</h2>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                    <button class="btn btn-continue">Continue Reading</button>
+                    <div class="blog-info-text">
+                        <h2>duis aute irure dolor in henderit in voluptate.</h2>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
+                            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    </div>
+                    <button class="btn btn-continue" onclick="openModal()">Continue Reading&nbsp;&nbsp;</button>
                 </div>
             </li>
             <li class="blog-item flex space-between">
                 <img class="blog-item-img" src="img/img_site_2.jpg" alt="Pointview on beach">
                 <img class="blog-item-img-protrait" src="img/img_site_2_protrait.jpg" alt="Mountain and tree view">
                 <div class="blog-info flex column space-between">
-                    <h2>duis aute irure dolor in henderit in voluptate.</h2>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                    <button class="btn btn-continue">Continue Reading</button>
+                    <div class="blog-info-text">
+                        <h2>duis aute irure dolor in henderit in voluptate.</h2>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
+                            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    </div>
+                    <button class="btn btn-continue" onclick="openModal()">Continue Reading</button>
                 </div>
             </li>
             <li class="blog-item flex space-between">
                 <img class="blog-item-img" src="img/img_site_3.jpg" alt="Wheat fiels">
                 <img class="blog-item-img-protrait" src="img/img_site_3_protrait.jpg" alt="Mountain and tree view">
                 <div class="blog-info flex column space-between">
-                    <h2>duis aute irure dolor in henderit in voluptate.</h2>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-                    <button class="btn btn-continue">Continue Reading</button>
+                    <div class="blog-info-text">
+                        <h2>duis aute irure dolor in henderit in voluptate.</h2>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat,
+                            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur voluptate velit esse cillum dolore eu fugiat nulla pariaturvoluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+                    </div>
+                    <button class="btn btn-continue" onclick="openModal()">Continue Reading</button>
                 </div>
             </li>
         </ul>
+        <div class="modal-continue flex align-center column space-around hidden">
+            <button type="button" class="btn btn-close modal-continue-txt" onclick="closeModal()">X</button>
+            <div class="modal-details">
+            <h3>Join us to get access to the latest stories!</h3>
+                <label class="modal-continue-txt flex space-between align-center column" >Your E-mail
+                <input type="email" class="form-control form-e-mail modal-continue-txt" placeholder="name@example.com" autocomplete="on" required>
+                </br>
+                </label>
+            </div>
+            <button type="button" class="btn btn-submit modal-continue-txt" onclick="onSubmit(event)">Submit</button>
+        </div>
     </main>
         <div class="btns-previous-next flex space-between">
             <button class="btn btn-previous"><i class="fa fa-long-arrow-left"></i>previous</button>
@@ -84,23 +109,6 @@
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            // $('nav ul').toggle('.open');
-            var elMenu = document.querySelector('nav ul');
-            elMenu.classList.toggle('.open');
-            var elBtnToggleMenu= document.querySelector('.btn-toggle-menu');
-            // var txt = $(elBtnToggleMenu.innerText).is('X') ? '☰' : 'X';
-            // $(elBtnToggleMenu).text(txt);
-            var txt = (elBtnToggleMenu.innerText === 'X') ? '☰' : 'X';
-            // var txt = $(elBtnToggleMenu.innerText).is('X') ? '☰' : 'X';
-            elBtnToggleMenu.innerText = txt;
-
-
-            // elBtnToggleMenu.innerText = 'X';
-            // var elMenuLink = document.querySelector('nav li a');
-            // elMenu.classList.toggle('.nav-li-a-open ');
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
