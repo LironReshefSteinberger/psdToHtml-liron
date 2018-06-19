@@ -10,19 +10,17 @@ console.log('hi');
 
 function openModal() {
     console.log('hiii');
-    var elModal = document.querySelector('.modal-continue');
-    elModal.classList.toggle('open-modal');
-    var elScreen = document.querySelector('.screen');
-    elScreen.classList.toggle('screen-open');
-    // closeModal();
-    // if (elScreen.document.querySelector !== ".screen-open") closeModal();
+    var elModal = document.querySelector('.modal-container');
+    elModal.classList.toggle('modal-container-open');
+    var elModalContinue = document.querySelector('.modal-continue');
+    elModalContinue.classList.toggle('open-modal-continue');
 }
 
 function closeModal() {
-    var elModal = document.querySelector('.modal-continue');
-    elModal.classList.remove('open-modal');
-    var elScreen = document.querySelector('.screen');
-    elScreen.classList.remove('screen-open');
+    var elModal = document.querySelector('.modal-container');
+    elModal.classList.remove('modal-container-open');
+    var elModalContinue = document.querySelector('.modal-continue');
+    elModalContinue.classList.remove('open-modal-continue');
 }
 
 function onSubmit() {

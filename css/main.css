@@ -235,8 +235,8 @@ nav li a:active{
 
 .journal-dropdown li a {
     width: 260px;
-    height: 80px;
-    line-height: 80px;
+    height: 68px;
+    line-height: 60px;
     margin: 0;
 }
 
@@ -278,6 +278,7 @@ main.container {
 .blog-info-text p {
     margin-bottom: 20px;
     margin-top: 10px;
+    flex-wrap: nowrap;
 }
 
 .blog-item-img {
@@ -303,17 +304,19 @@ main.container {
     z-index: -1;
 } */
 
+.btn-continue {
+    position: relative;
+}
+
 .btn-continue, .btn-submit {
     /* display: none; */
     border-radius: 20px;
     border: 2px solid #c2c2c2;
     color: #c2c2c2;
     height: 40px;
-    
     /* width: 300px; */
     font-family:  'Lato-regular', 'Open Sans', sans-serif;
     font-size: 1rem;
-    position: relative;
     max-width:190px;
     /* right: 15px; */
     padding: 0 0;
@@ -323,7 +326,8 @@ main.container {
 .btn-continue:hover {   
     color: #58c93a;
     border: 2px solid #58c93a;
-    padding: 0 10px;
+    /*to center the arrow- only margin-right*/
+    padding: 0 15px 0 0;
     max-width: 200px;
     
     /* max-width:300px; */
@@ -337,16 +341,46 @@ main.container {
     position: absolute;
 }
 
+.modal-container {
+    /* display: none; */
+    background-color: #1e1e1e75;
+    /*this is not position fixed - all modal container is in fixed*/
+    width: 100%;
+    height: 100%; 
+    position: relative;
+    visibility: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container-open {
+    /* display: inline-block; */
+    visibility: visible;
+    background-color: #1e1e1e75;
+    /*all modal needs to be in position: fixed, width: 100%;, height: 100%; - so it will be on all screen*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 7;
+}
+
 .modal-continue {
-    width: 100vw;
-    height: 100vh;
     background-color: #1e1e1e;
     color: #ffffff;
     align-items: center;
     margin: 0;
-    z-index: 6;
     justify-content: center;
     display: none;
+}
+
+.open-modal-continue {
+    display: flex;
+    z-index: 3;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
 }
 
 /* .btn-continue:active .modal-continue {
@@ -357,11 +391,6 @@ main.container {
     visibility: visible;
     z-index: 1;
 } */
-
-
-.modal-continue-open {
-    display: inline-block;
-}
 
 .modal-continue-txt {
     margin: 20px;
@@ -376,10 +405,7 @@ main.container {
 .btn-close {
     height: 50px;
     width: 50px;
-    align-self: center;
-    align-self: flex-start;
     line-height: 2rem;
-    text-align: center;
     padding: 2px;
     background-color: #1e1e1e;
     color: #ffffff;
@@ -391,9 +417,7 @@ main.container {
 }
 
 .modal-details {
-    position: absolute;
-    right: 10%;
-    top: 30%;
+    padding-top: 40px;
 }
 
 .form-e-mail {
@@ -408,18 +432,10 @@ main.container {
     display: block;
     padding: 15px 30px;
     color: #1e1e1e;
-    position: absolute;
+    /* margin-bottom: 40px; */
+    /* position: absolute;
     top: 62%;
-    right: 38%;
-
-}
-
-.open-modal {
-    display: inline-block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    /* display: inline; */
+    right: 38%; */
 }
 
 .btns-previous-next {
@@ -507,14 +523,12 @@ footer p span {
 }
 
 @media screen and (min-width: 678px) {
-    .modal-continue {
-        width: 500px;
-        height: 300px;
-        background-color: #1e1e1e;
-        color: #ffffff;
-        align-items: center;
-        margin: 0;
-        z-index: 6;
+    .open-modal-continue {
+        /* display: inline-block; */
+        z-index: 3;
+        position: absolute;
+        width: 550px;
+        height: 350px;
     }
     
     .modal-continue-txt {
@@ -529,24 +543,7 @@ footer p span {
     }
     
     .btn-close {
-        height: 50px;
-        width: 50px;
-        align-self: center;
-        align-self: flex-end;
-        line-height: 2rem;
-        text-align: center;
-        padding: 2px;
-        background-color: #1e1e1e;
-        color: #ffffff;
-        border: 0;
-        font-size: 1.5rem;
-        position: relative;
         top: 5%;
-
-    }
-    
-    .form-e-mail {
-        padding: 10px;
     }
     
     .btn-submit {
@@ -557,15 +554,9 @@ footer p span {
         display: block;
         padding: 15px 30px;
         color: #1e1e1e;
-        position: relative;
+        /* position: relative;
         top: -3%;
-        right: -37%;
-    }
-    
-    .open-modal {
-        /* display: inline-block; */
-        top: 30%;
-        right: 20%;
+        right: -37%; */
     }
 
     header {
@@ -650,10 +641,14 @@ footer p span {
 
     .open-modal {
         /* display: inline-block; */
-        top: 30%;
-        right: 25%;
+        /* top: 30%;
+        right: 25%; */
     }
     
+    .journal-dropdown li a {
+        height: 80px;
+    }
+
     header {
         height: 130px;
     }
